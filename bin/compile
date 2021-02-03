@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+BUILD_DIR=$1
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+BIN_DIR=$BUILD_DIR/.elasticdump
+mkdir -p $BIN_DIR
+
+cd $BIN_DIR
+
+npm install elasticdump
+
+mkdir -p $BUILD_DIR/.profile.d
+export PATH=$PATH:$HOME/.elasticdump/bin

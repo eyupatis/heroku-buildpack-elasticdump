@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "elasticdump"
+exit 0
